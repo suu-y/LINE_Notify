@@ -27,8 +27,6 @@ diff = difflib.ndiff(log, item_text)
 #print('\n'.join(diff))     # 全部を見る
 print('\n'.join([r for r in diff if r[0:1] in ['-', '+']]))   # 差分だけ見る
 
-
-
 # logを作成する
 print(log_file_path)
 current_date = datetime.datetime.now().strftime('%Y-%m-%d')

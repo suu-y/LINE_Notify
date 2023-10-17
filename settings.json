@@ -1,5 +1,16 @@
 {
-    "URL": "***",
-    "LINE_Notify_token": "***",
-    "encoding": "SHIFT-JIS"
+    "website": [
+        {
+            "title": "site1",
+            "URL": "https://***",
+            "LINE_Notify_token": "***",
+            "encoding": "UTF-8"
+        },
+        {
+            "title": "site2",
+            "URL": "https://***",
+            "LINE_Notify_token": "***",
+            "encoding": "SHIFT-JIS"        
+        }
+    ]
 }

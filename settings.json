@@ -1,4 +1,5 @@
 {
-    "URL": "https://***/rss/feed.xml",
-    "LINE_Notify_token": "***"
+    "URL": "***",
+    "LINE_Notify_token": "***",
+    "encoding": "SHIFT-JIS"
 }

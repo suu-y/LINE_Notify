@@ -4,13 +4,15 @@
             "title": "site1",
             "URL": "https://***",
             "LINE_Notify_token": "***",
-            "encoding": "UTF-8"
+            "encoding": "UTF-8", 
+            "keywords": [ "インターンシップ", "Internship"]
         },
         {
             "title": "site2",
             "URL": "https://***",
             "LINE_Notify_token": "***",
-            "encoding": "SHIFT-JIS"        
+            "encoding": "SHIFT-JIS",      
+            "keywords": [ "採用" ]      
         }
     ]
 }

@@ -17,7 +17,8 @@ for site_num in range(site_cnt):
     HTML_URL = json_data['website'][site_num]['URL']
     LINE_Notify_token = json_data['website'][site_num]['LINE_Notify_token']
     HTML_encoding = json_data['website'][site_num]['encoding']
-    print(HTML_name, HTML_URL, LINE_Notify_token, HTML_encoding)   
+    Notify_keywords = json_data['website'][site_num]['keywords']
+    print(HTML_name, HTML_URL, LINE_Notify_token, HTML_encoding, '\n')
 
     # 現在のログを取得
     log_file_list = glob.glob('./title_collection_*_' + HTML_name +'.log')
@@ -32,7 +33,6 @@ for site_num in range(site_cnt):
     item_text = [j for j in txt.stripped_strings]
     item_text = '\n'.join(item_text)
     item_text = re.sub(r'(\n)(\n)*', r'\n', item_text)
-    #print(item_text)
 
     # logとitem_textの差分を取り、更新があるなら通知を送信する
     with open(log_file_path, mode='r') as f_read:
@@ -47,7 +47,7 @@ for site_num in range(site_cnt):
     def send_notify(message: str, token: str):
         line_notify_api = 'https://notify-api.line.me/api/notify'
         headers = {'Authorization': f'Bearer {token}'}
-        data = {'message': f'\n{HTML_name}の新着記事： \n{message} \n\n{HTML_URL}'}
+        data = {'message': f'\n{HTML_name}の新着記事： \n\n{message} \n\n{HTML_URL}'}
         requests.post(line_notify_api, headers=headers, data=data)
 
     # logを作成する
@@ -58,6 +58,10 @@ for site_num in range(site_cnt):
     with open(new_log_file_path, mode='w') as f_log:
         f_log.write(log_text)
 
-    # 更新がある場合はNotifyで通知
-    if added_article != '':
-        send_notify(added_article, LINE_Notify_token)
+    # 指定したキーワードに一致する更新がある場合はNotifyで通知
+    added_article = added_article.split('\n')
+    matched_articles = '\n'.join([article for article in added_article if \
+        any(keyword in article for keyword in Notify_keywords)])
+    print(matched_articles)
+    if (matched_articles != ''):
+        send_notify(matched_articles, LINE_Notify_token)

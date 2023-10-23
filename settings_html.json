@@ -1,0 +1,25 @@
+{
+    "website": [
+        {
+            "title": "***",
+            "URL": "https://***",
+            "LINE_Notify_token": "***",
+            "encoding": "SHIFT-JIS",      
+            "keywords": [ "採用" ]      
+        },
+        {
+            "title": "***",
+            "URL": "https://***",
+            "LINE_Notify_token": "***",
+            "encoding": "UTF-8",      
+            "keywords": [ "" ]      
+        },
+        {
+            "title": "***",
+            "URL": "https://***",
+            "LINE_Notify_token": "***",
+            "encoding": "UTF-8",      
+            "keywords": [ "ハッカソン" ]      
+        }                
+    ]
+}

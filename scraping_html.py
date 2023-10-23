@@ -8,7 +8,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # 設定ファイルの読み取り
-with open('./settings.json') as f_json:
+with open('./settings_html.json') as f_json:
     json_data = json.load(f_json)
 site_cnt = len(json_data['website'])
 
@@ -21,7 +21,7 @@ for site_num in range(site_cnt):
     print(HTML_name, HTML_URL, LINE_Notify_token, HTML_encoding, '\n')
 
     # 現在のログを取得
-    log_file_list = glob.glob('./title_collection_*_' + HTML_name +'.log')
+    log_file_list = glob.glob('./html_title_collection_*_' + HTML_name +'.log')
     log_file_path = log_file_list[0]
 
     # スクレイピング
@@ -53,7 +53,7 @@ for site_num in range(site_cnt):
     # logを作成する
     log_text = item_text     # type(item_text) -> list
     current_date = datetime.datetime.now().strftime('%Y-%m-%d')
-    new_log_file_path = f'./title_collection_{current_date}_{HTML_name}.log'
+    new_log_file_path = f'./html_title_collection_{current_date}_{HTML_name}.log'
     os.remove(log_file_path)
     with open(new_log_file_path, mode='w') as f_log:
         f_log.write(log_text)

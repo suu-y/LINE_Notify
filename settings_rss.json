@@ -1,0 +1,15 @@
+{
+    "rss": [
+        {
+            "title": "***",
+            "URL": "https://***/rss/feed.xml",
+            "LINE_Notify_token": "***"
+        },
+        {
+            "title": "***",
+            "URL": "https://***/rss/rss.xml",
+            "LINE_Notify_token": "***"            
+        }
+        
+    ]
+}

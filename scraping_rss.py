@@ -44,7 +44,7 @@ for site_num in range(site_cnt):
     def send_notify(message: str, token: str):
         line_notify_api = 'https://notify-api.line.me/api/notify'
         headers = {'Authorization': f'Bearer {token}'}
-        data = {'message': f'\n{title_text}の新着記事： \n{message} \n\n{url_text}'}
+        data = {'message': f'\n{RSS_name}の新着記事： \n{message} \n\n{url_text}'}
         requests.post(line_notify_api, headers=headers, data=data)
 
     # logを作成する

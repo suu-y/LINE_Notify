@@ -1,0 +1,1 @@
+30 6,12 * * * sh /Users/student01/Documents/src/Automation/LINE_Notion/automation.sh

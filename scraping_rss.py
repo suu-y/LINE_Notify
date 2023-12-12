@@ -56,5 +56,5 @@ for site_num in range(site_cnt):
         f_log.write(log_text)
 
     # 更新がある場合はNotifyで通知
-    #if added_article != '':
-    #    send_notify(added_article, LINE_Notify_token)
+    if added_article != '':
+        send_notify(added_article, LINE_Notify_token)
